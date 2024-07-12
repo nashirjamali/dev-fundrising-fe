@@ -1,16 +1,20 @@
 'use client';
 
 import {
+  Box,
   Button,
   Card,
   CardActions,
   CardContent,
   CardMedia,
+  Container,
   Stack,
   Typography
 } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { getEvents } from './handler';
+import Link from 'next/link';
+import { EVENTS } from '@/constants/routes';
 
 const EventCard = ({ event }: { event: any }) => (
   <Card sx={{ maxWidth: 345 }}>
@@ -42,16 +46,18 @@ const EventsPage = () => {
   }, []);
 
   return (
-    <Stack
-      direction={{
-        md: 'row',
-        sm: 'column'
-      }}
-    >
-      {events?.map((event, index) => (
-        <EventCard key={index} event={event.attributes} />
-      ))}
-    </Stack>
+    <Container>
+      <Box marginBottom={10}>
+        <Link href={EVENTS.CREATE}>
+          <Button variant="contained">Buat Event</Button>
+        </Link>
+      </Box>
+      <Stack direction="row" spacing={5}>
+        {events?.map((event, index) => (
+          <EventCard key={index} event={event.attributes} />
+        ))}
+      </Stack>
+    </Container>
   );
 };
 

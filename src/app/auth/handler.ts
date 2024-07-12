@@ -1,5 +1,6 @@
 import axios from '@/configs/axios';
 import { AUTH } from '@/constants/api';
+import { saveToStorage } from '@/utils/localStorage'
 import { FieldValues } from 'react-hook-form';
 
 export const login = async (data: FieldValues) => {
@@ -9,6 +10,8 @@ export const login = async (data: FieldValues) => {
     identifier: username,
     password
   });
+  
+  saveToStorage('token', response.data.jwt);
 
   return response;
 };
