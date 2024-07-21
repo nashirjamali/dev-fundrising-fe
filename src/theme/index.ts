@@ -5,6 +5,7 @@ import { createTheme } from '@mui/material/styles';
 
 import color from './color';
 import button from './button';
+import typography from './typography';
 
 const roboto = Poppins({
   weight: ['300', '400', '500', '700'],
@@ -13,9 +14,7 @@ const roboto = Poppins({
 });
 
 const theme = createTheme({
-  typography: {
-    fontFamily: roboto.style.fontFamily
-  },
+  typography: typography,
   components: {
     MuiButton: button
   },
