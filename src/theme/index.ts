@@ -6,17 +6,19 @@ import { createTheme } from '@mui/material/styles';
 import color from './color';
 import button from './button';
 import typography from './typography';
-
-const roboto = Poppins({
-  weight: ['300', '400', '500', '700'],
-  subsets: ['latin'],
-  display: 'swap'
-});
+import {
+  MuiTextField,
+  MuiInputBase,
+  MuiOutlinedInput,
+} from './input';
 
 const theme = createTheme({
   typography: typography,
   components: {
-    MuiButton: button
+    MuiButton: button,
+    MuiTextField: MuiTextField,
+    MuiInputBase: MuiInputBase,
+    MuiOutlinedInput: MuiOutlinedInput,
   },
   palette: color
 });

@@ -7,6 +7,7 @@ export default function Theme() {
     <Container>
       <Stack gap={5}>
        <Link href={'/theme/typography'}>Typography</Link>
+       <Link href={'/theme/form'}>Form</Link>
       </Stack>
     </Container>
   );
