@@ -7,6 +7,6 @@ export const FILE = {
 };
 
 export const EVENT = {
-  find: 'events',
+  find: 'events?populate=banner',
   create: 'events'
 };
